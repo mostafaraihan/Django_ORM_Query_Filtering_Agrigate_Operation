@@ -44,5 +44,15 @@ def home(request):
 
 
     # Exclude Data
-    users = User.objects.exclude(username__icontains="ra").values()
+    # users = User.objects.exclude(username__icontains="ra").values()
+    # return JsonResponse({"user": list(users)})
+
+
+    #Sorting Data
+    Assanding Order
+    users = User.objects.all().order_by("username").values()
     return JsonResponse({"user": list(users)})
+    Desanding Order
+    users = User.objects.all().order_by("-username").values()
+    return JsonResponse({"user": list(users)})
+
