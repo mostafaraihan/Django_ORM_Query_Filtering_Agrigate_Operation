@@ -49,10 +49,14 @@ def home(request):
 
 
     #Sorting Data
-    Assanding Order
-    users = User.objects.all().order_by("username").values()
-    return JsonResponse({"user": list(users)})
-    Desanding Order
-    users = User.objects.all().order_by("-username").values()
-    return JsonResponse({"user": list(users)})
+    #Assanding Order
+    # users = User.objects.all().order_by("username").values()
+    # return JsonResponse({"user": list(users)})
+    #Desanding Order
+    # users = User.objects.all().order_by("-username").values()
+    # return JsonResponse({"user": list(users)})
 
+
+    #Limiting Data
+    users = User.objects.all()[1:3].values()
+    return JsonResponse({"user": list(users)})
