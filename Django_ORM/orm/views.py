@@ -58,5 +58,13 @@ def home(request):
 
 
     #Limiting Data
-    users = User.objects.all()[1:3].values()
-    return JsonResponse({"user": list(users)})
+    # users = User.objects.all()[1:3].values()
+    # return JsonResponse({"user": list(users)})
+
+
+    #Agrigation
+    from django.db.models import Avg, Max, Min, Sum, Count
+
+    #count
+    # users = User.objects.aggregate(Count('id'))
+    # return JsonResponse({"user": users})
