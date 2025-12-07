@@ -82,11 +82,33 @@ def home(request):
     # return JsonResponse({"user": users})
 
     #Agrigation
-    data = User.objects.aggregate(
-        total_users=Count('id'),
-        max_otp=Max('otp'),
-        min_otp=Min('otp'),
-        avg_otp=Avg('otp'),
-        sum_otp=Sum('otp')
+    # data = User.objects.aggregate(
+    #     total_users=Count('id'),
+    #     max_otp=Max('otp'),
+    #     min_otp=Min('otp'),
+    #     avg_otp=Avg('otp'),
+    #     sum_otp=Sum('otp')
+    # )
+    # return JsonResponse({"user_statistics": data})
+
+
+    #Insert Data
+    user = User.objects.create(
+        username="newuser",
+        email="newuser@gmail.com",
+        mobile="1234567890",
+        password="password123",
+        first_name="New",
+        last_name="User",
+        otp=123456
     )
-    return JsonResponse({"user_statistics": data})
+    return JsonResponse({
+        'id': user.id,
+        'username': user.username,
+        'email': user.email,
+        'mobile': user.mobile,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'created_at': user.created_at,
+        'updated_at': user.updated_at,
+    })
