@@ -72,5 +72,8 @@ def home(request):
     # users = User.objects.aggregate(Max('otp'))
     # return JsonResponse({"user": users})
     #min
-    users = User.objects.aggregate(Min('otp'))
+    # users = User.objects.aggregate(Min('otp'))
+    # return JsonResponse({"user": users})
+    #avg
+    users = User.objects.aggregate(Avg('otp'))
     return JsonResponse({"user": users})
