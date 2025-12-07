@@ -68,3 +68,6 @@ def home(request):
     #count
     # users = User.objects.aggregate(Count('id'))
     # return JsonResponse({"user": users})
+    #max
+    users = User.objects.aggregate(Max('otp'))
+    return JsonResponse({"user": users})
