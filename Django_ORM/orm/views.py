@@ -12,7 +12,20 @@ def home(request):
     # return JsonResponse({"user":(users.username)})
 
     #Fetch Fist Data
-    users =User.objects.first()
+    # users =User.objects.first()
+    # return JsonResponse({
+    #     'id': users.id,
+    #     'username': users.username,
+    #     'email': users.email,
+    #     'mobile': users.mobile,
+    #     'first_name': users.first_name,
+    #     'last_name': users.last_name,
+    #     'created_at': users.created_at,
+    #     'updated_at': users.updated_at,
+    # })
+
+    #Fetch Last Data
+    users =User.objects.last()
     return JsonResponse({
         'id': users.id,
         'username': users.username,
