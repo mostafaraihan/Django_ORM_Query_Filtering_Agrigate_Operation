@@ -1,4 +1,8 @@
+from django.http import JsonResponse
 from .models import *
 
 def home(request):
-    user =User.objects.get(id=1)
+
+    #Fetch all user data
+    users =User.objects.all().values()
+    return JsonResponse({"user":list(users)})
