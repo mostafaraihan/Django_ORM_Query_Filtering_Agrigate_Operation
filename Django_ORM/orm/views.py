@@ -78,5 +78,15 @@ def home(request):
     # users = User.objects.aggregate(Avg('otp'))
     # return JsonResponse({"user": users})
     #sum
-    users = User.objects.aggregate(Sum('otp'))
-    return JsonResponse({"user": users})
+    # users = User.objects.aggregate(Sum('otp'))
+    # return JsonResponse({"user": users})
+
+    #Agrigation
+    data = User.objects.aggregate(
+        total_users=Count('id'),
+        max_otp=Max('otp'),
+        min_otp=Min('otp'),
+        avg_otp=Avg('otp'),
+        sum_otp=Sum('otp')
+    )
+    return JsonResponse({"user_statistics": data})
