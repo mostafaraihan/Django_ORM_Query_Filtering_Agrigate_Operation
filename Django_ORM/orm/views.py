@@ -128,5 +128,17 @@ def home(request):
     # return JsonResponse({"msg": "Bulk Created Successfully"})
 
     #Delete Data
-    User.objects.get(id=4).delete()
-    return JsonResponse({"msg": "Deleted Successfully"})
+    # User.objects.get(id=4).delete()
+    # return JsonResponse({"msg": "Deleted Successfully"})
+
+    # Update data
+    User.objects.filter(id=3).update(
+        username='nazmul',
+        password='nazmul',
+        first_name='Nazmul',
+        last_name='Islam',
+        email='nazmul@gmail.com'
+    )
+
+    return JsonResponse({"msg": "Updated Successfully"})
+
