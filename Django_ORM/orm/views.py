@@ -39,5 +39,10 @@ def home(request):
 
 
     # Filtering Data
-    users = User.objects.filter(username__icontains="ra").values()
+    # users = User.objects.filter(username__icontains="ra").values()
+    # return JsonResponse({"user": list(users)})
+
+
+    # Exclude Data
+    users = User.objects.exclude(username__icontains="ra").values()
     return JsonResponse({"user": list(users)})
