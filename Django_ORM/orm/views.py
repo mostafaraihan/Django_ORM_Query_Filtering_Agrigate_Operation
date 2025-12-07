@@ -69,5 +69,8 @@ def home(request):
     # users = User.objects.aggregate(Count('id'))
     # return JsonResponse({"user": users})
     #max
-    users = User.objects.aggregate(Max('otp'))
+    # users = User.objects.aggregate(Max('otp'))
+    # return JsonResponse({"user": users})
+    #min
+    users = User.objects.aggregate(Min('otp'))
     return JsonResponse({"user": users})
