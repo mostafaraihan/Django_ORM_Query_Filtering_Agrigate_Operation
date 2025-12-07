@@ -1,0 +1,1 @@
+# Django_ORM_Query_Filtering_Agrigate_Operation
