@@ -126,3 +126,7 @@ def home(request):
     # ]
     # User.objects.bulk_create(users)
     # return JsonResponse({"msg": "Bulk Created Successfully"})
+
+    #Delete Data
+    User.objects.get(id=4).delete()
+    return JsonResponse({"msg": "Deleted Successfully"})
