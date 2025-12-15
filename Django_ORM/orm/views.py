@@ -1,15 +1,19 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .models import *
 
 def home(request):
+    return HttpResponse("Django ORM Query Filtering Agrigate Operation")
 
+def fetch_alldata(request):
     #Fetch all user data
-    # users =User.objects.all().values()
-    # return JsonResponse({"user":list(users)})
+    users =User.objects.all().values()
+    return JsonResponse({"user":list(users)})
 
+
+def fetch_singledata(request):
     #Fetch single user data
-    # users =User.objects.get(id=1)
-    # return JsonResponse({"user":(users.username)})
+    users =User.objects.get(id=1)
+    return JsonResponse({"user":(users.username)})
 
     #Fetch Fist Data
     # users =User.objects.first()
@@ -132,13 +136,13 @@ def home(request):
     # return JsonResponse({"msg": "Deleted Successfully"})
 
     # Update data
-    User.objects.filter(id=3).update(
-        username='nazmul',
-        password='nazmul',
-        first_name='Nazmul',
-        last_name='Islam',
-        email='nazmul@gmail.com'
-    )
-
-    return JsonResponse({"msg": "Updated Successfully"})
+    # User.objects.filter(id=3).update(
+    #     username='nazmul',
+    #     password='nazmul',
+    #     first_name='Nazmul',
+    #     last_name='Islam',
+    #     email='nazmul@gmail.com'
+    # )
+    #
+    # return JsonResponse({"msg": "Updated Successfully"})
 
