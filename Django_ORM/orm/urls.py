@@ -19,4 +19,5 @@ urlpatterns = [
     path('sum_data/', views.sum_data),
     path('aggregate_data/', views.aggregate_data),
     path('insert_data/', views.insert_data),
+    path('insert_multiple_data/', views.insert_multiple_data),
 ]

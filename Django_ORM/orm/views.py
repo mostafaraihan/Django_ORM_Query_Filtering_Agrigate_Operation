@@ -137,19 +137,21 @@ def insert_data(request):
         'updated_at': user.updated_at,
     })
 
+
+def insert_multiple_data(request):
     # Insert Multiple Data
-    # users = [
-    #     User(first_name="John", last_name="Doe", email="John@example.com", mobile="123456", password="123456",
-    #          otp=123456),
-    #     User(first_name="John", last_name="Doe", email="John@example.com", mobile="123456", password="123456",
-    #          otp=123456),
-    #     User(first_name="John", last_name="Doe", email="John@example.com", mobile="123456", password="123456",
-    #          otp=123456),
-    #     User(first_name="John", last_name="Doe", email="John@example.com", mobile="123456", password="123456",
-    #          otp=123456),
-    # ]
-    # User.objects.bulk_create(users)
-    # return JsonResponse({"msg": "Bulk Created Successfully"})
+    users = [
+        User(first_name="John", last_name="Doe", email="John@example.com", mobile="123456", password="123456",
+             otp=123456),
+        User(first_name="John", last_name="Doe", email="John@example.com", mobile="123456", password="123456",
+             otp=123456),
+        User(first_name="John", last_name="Doe", email="John@example.com", mobile="123456", password="123456",
+             otp=123456),
+        User(first_name="John", last_name="Doe", email="John@example.com", mobile="123456", password="123456",
+             otp=123456),
+    ]
+    User.objects.bulk_create(users)
+    return JsonResponse({"msg": "Bulk Created Successfully"})
 
     #Delete Data
     # User.objects.get(id=4).delete()
