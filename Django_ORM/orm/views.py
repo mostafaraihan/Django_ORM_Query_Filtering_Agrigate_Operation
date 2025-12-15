@@ -115,26 +115,27 @@ def aggregate_data(request):
     return JsonResponse({"user_statistics": data})
 
 
+def insert_data(request):
     # #Insert Data
-    # user = User.objects.create(
-    #     username="newuser",
-    #     email="newuser@gmail.com",
-    #     mobile="1234567890",
-    #     password="password123",
-    #     first_name="New",
-    #     last_name="User",
-    #     otp=123456
-    # )
-    # return JsonResponse({
-    #     'id': user.id,
-    #     'username': user.username,
-    #     'email': user.email,
-    #     'mobile': user.mobile,
-    #     'first_name': user.first_name,
-    #     'last_name': user.last_name,
-    #     'created_at': user.created_at,
-    #     'updated_at': user.updated_at,
-    # })
+    user = User.objects.create(
+        username="newuser",
+        email="newuser@gmail.com",
+        mobile="1234567890",
+        password="password123",
+        first_name="New",
+        last_name="User",
+        otp=123456
+    )
+    return JsonResponse({
+        'id': user.id,
+        'username': user.username,
+        'email': user.email,
+        'mobile': user.mobile,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'created_at': user.created_at,
+        'updated_at': user.updated_at,
+    })
 
     # Insert Multiple Data
     # users = [
