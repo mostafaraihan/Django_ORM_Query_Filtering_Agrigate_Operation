@@ -9,4 +9,6 @@ urlpatterns = [
     path('fetch_lastdata/', views.fetch_lastdata),
     path('filter_data/', views.filter_data),
     path('exclude_data/', views.exclude_data),
+    path('sort_ascending/', views.sort_ascending),
+    path('sort_descending/', views.sort_descending),
 ]

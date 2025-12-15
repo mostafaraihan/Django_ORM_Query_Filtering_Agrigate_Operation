@@ -58,13 +58,15 @@ def exclude_data(request):
     return JsonResponse({"user": list(users)})
 
 
-    #Sorting Data
-    #Assanding Order
-    # users = User.objects.all().order_by("username").values()
-    # return JsonResponse({"user": list(users)})
+def sort_ascending(request):
+    #AscendingOrder
+    users = User.objects.all().order_by("username").values()
+    return JsonResponse({"user": list(users)})
+
+def sort_descending(request):
     #Desanding Order
-    # users = User.objects.all().order_by("-username").values()
-    # return JsonResponse({"user": list(users)})
+    users = User.objects.all().order_by("-username").values()
+    return JsonResponse({"user": list(users)})
 
 
     #Limiting Data
