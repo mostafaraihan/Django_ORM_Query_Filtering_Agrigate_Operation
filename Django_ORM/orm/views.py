@@ -69,9 +69,10 @@ def sort_descending(request):
     return JsonResponse({"user": list(users)})
 
 
+def limiting_data(request):
     #Limiting Data
-    # users = User.objects.all()[1:3].values()
-    # return JsonResponse({"user": list(users)})
+    users = User.objects.all()[1:3].values()
+    return JsonResponse({"user": list(users)})
 
 
     #Agrigation

@@ -11,4 +11,5 @@ urlpatterns = [
     path('exclude_data/', views.exclude_data),
     path('sort_ascending/', views.sort_ascending),
     path('sort_descending/', views.sort_descending),
+    path('limiting_data/', views.limiting_data),
 ]
