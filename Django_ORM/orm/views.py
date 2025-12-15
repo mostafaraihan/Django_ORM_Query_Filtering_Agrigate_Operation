@@ -76,11 +76,12 @@ def limiting_data(request):
 
 
     #Agrigation
-    from django.db.models import Avg, Max, Min, Sum, Count
+from django.db.models import Avg, Max, Min, Sum, Count
 
+def count_data(request):
     #count
-    # users = User.objects.aggregate(Count('id'))
-    # return JsonResponse({"user": users})
+    users = User.objects.aggregate(Count('id'))
+    return JsonResponse({"user": users})
     #max
     # users = User.objects.aggregate(Max('otp'))
     # return JsonResponse({"user": users})
