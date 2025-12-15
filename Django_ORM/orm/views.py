@@ -15,31 +15,35 @@ def fetch_singledata(request):
     users =User.objects.get(id=1)
     return JsonResponse({"user":(users.username)})
 
-    #Fetch Fist Data
-    # users =User.objects.first()
-    # return JsonResponse({
-    #     'id': users.id,
-    #     'username': users.username,
-    #     'email': users.email,
-    #     'mobile': users.mobile,
-    #     'first_name': users.first_name,
-    #     'last_name': users.last_name,
-    #     'created_at': users.created_at,
-    #     'updated_at': users.updated_at,
-    # })
 
+def fetch_firstdata(request):
+    #Fetch First Data
+    users =User.objects.first()
+    return JsonResponse({
+        'id': users.id,
+        'username': users.username,
+        'email': users.email,
+        'mobile': users.mobile,
+        'first_name': users.first_name,
+        'last_name': users.last_name,
+        'created_at': users.created_at,
+        'updated_at': users.updated_at,
+    })
+
+
+def fetch_lastdata(request):
     #Fetch Last Data
-    # users =User.objects.last()
-    # return JsonResponse({
-    #     'id': users.id,
-    #     'username': users.username,
-    #     'email': users.email,
-    #     'mobile': users.mobile,
-    #     'first_name': users.first_name,
-    #     'last_name': users.last_name,
-    #     'created_at': users.created_at,
-    #     'updated_at': users.updated_at,
-    # })
+    users =User.objects.last()
+    return JsonResponse({
+        'id': users.id,
+        'username': users.username,
+        'email': users.email,
+        'mobile': users.mobile,
+        'first_name': users.first_name,
+        'last_name': users.last_name,
+        'created_at': users.created_at,
+        'updated_at': users.updated_at,
+    })
 
 
     # Filtering Data
