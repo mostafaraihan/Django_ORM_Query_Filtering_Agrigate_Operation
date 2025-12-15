@@ -7,4 +7,5 @@ urlpatterns = [
     path('fetch_singledata/', views.fetch_singledata),
     path('fetch_firstdata/', views.fetch_firstdata),
     path('fetch_lastdata/', views.fetch_lastdata),
+    path('filter_data/', views.filter_data),
 ]

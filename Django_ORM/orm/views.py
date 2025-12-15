@@ -46,9 +46,10 @@ def fetch_lastdata(request):
     })
 
 
+def filter_data(request):
     # Filtering Data
-    # users = User.objects.filter(username__icontains="ra").values()
-    # return JsonResponse({"user": list(users)})
+    users = User.objects.filter(username__icontains="ra").values()
+    return JsonResponse({"user": list(users)})
 
 
     # Exclude Data
