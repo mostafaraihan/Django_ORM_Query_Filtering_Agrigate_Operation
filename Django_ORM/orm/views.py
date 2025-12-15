@@ -153,9 +153,10 @@ def insert_multiple_data(request):
     User.objects.bulk_create(users)
     return JsonResponse({"msg": "Bulk Created Successfully"})
 
+def delete_data(request):
     #Delete Data
-    # User.objects.get(id=4).delete()
-    # return JsonResponse({"msg": "Deleted Successfully"})
+    User.objects.get(id=4).delete()
+    return JsonResponse({"msg": "Deleted Successfully"})
 
     # Update data
     # User.objects.filter(id=3).update(

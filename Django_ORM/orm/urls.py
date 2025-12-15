@@ -20,4 +20,5 @@ urlpatterns = [
     path('aggregate_data/', views.aggregate_data),
     path('insert_data/', views.insert_data),
     path('insert_multiple_data/', views.insert_multiple_data),
+    path('delete_data/', views.delete_data),
 ]
