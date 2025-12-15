@@ -87,9 +87,11 @@ def max_data(request):
     #max
     users = User.objects.aggregate(Max('otp'))
     return JsonResponse({"user": users})
+
+def min_data(request):
     #min
-    # users = User.objects.aggregate(Min('otp'))
-    # return JsonResponse({"user": users})
+    users = User.objects.aggregate(Min('otp'))
+    return JsonResponse({"user": users})
     # avg
     # users = User.objects.aggregate(Avg('otp'))
     # return JsonResponse({"user": users})
