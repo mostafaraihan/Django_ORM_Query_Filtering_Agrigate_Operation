@@ -16,4 +16,5 @@ urlpatterns = [
     path('max_data/', views.max_data),
     path('min_data/', views.min_data),
     path('avg_data/', views.avg_data),
+    path('sum_data/', views.sum_data),
 ]

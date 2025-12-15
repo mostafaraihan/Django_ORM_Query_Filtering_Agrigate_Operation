@@ -97,9 +97,11 @@ def avg_data(request):
     # avg
     users = User.objects.aggregate(Avg('otp'))
     return JsonResponse({"user": users})
+
+def sum_data(request):
     #sum
-    # users = User.objects.aggregate(Sum('otp'))
-    # return JsonResponse({"user": users})
+    users = User.objects.aggregate(Sum('otp'))
+    return JsonResponse({"user": users})
 
     #Agrigation
     # data = User.objects.aggregate(
