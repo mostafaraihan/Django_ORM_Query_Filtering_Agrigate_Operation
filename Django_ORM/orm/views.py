@@ -52,9 +52,10 @@ def filter_data(request):
     return JsonResponse({"user": list(users)})
 
 
+def exclude_data(request):
     # Exclude Data
-    # users = User.objects.exclude(username__icontains="ra").values()
-    # return JsonResponse({"user": list(users)})
+    users = User.objects.exclude(username__icontains="ra").values()
+    return JsonResponse({"user": list(users)})
 
 
     #Sorting Data
