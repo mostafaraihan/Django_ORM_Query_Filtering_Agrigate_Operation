@@ -158,14 +158,15 @@ def delete_data(request):
     User.objects.get(id=4).delete()
     return JsonResponse({"msg": "Deleted Successfully"})
 
+def update_data(request):
     # Update data
-    # User.objects.filter(id=3).update(
-    #     username='nazmul',
-    #     password='nazmul',
-    #     first_name='Nazmul',
-    #     last_name='Islam',
-    #     email='nazmul@gmail.com'
-    # )
-    #
-    # return JsonResponse({"msg": "Updated Successfully"})
+    User.objects.filter(id=3).update(
+        username='nazmul',
+        password='nazmul',
+        first_name='Nazmul',
+        last_name='Islam',
+        email='nazmul@gmail.com'
+    )
+
+    return JsonResponse({"msg": "Updated Successfully"})
 
