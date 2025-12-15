@@ -103,15 +103,16 @@ def sum_data(request):
     users = User.objects.aggregate(Sum('otp'))
     return JsonResponse({"user": users})
 
-    #Agrigation
-    # data = User.objects.aggregate(
-    #     total_users=Count('id'),
-    #     max_otp=Max('otp'),
-    #     min_otp=Min('otp'),
-    #     avg_otp=Avg('otp'),
-    #     sum_otp=Sum('otp')
-    # )
-    # return JsonResponse({"user_statistics": data})
+def aggregate_data(request):
+    #Aggregation
+    data = User.objects.aggregate(
+        total_users=Count('id'),
+        max_otp=Max('otp'),
+        min_otp=Min('otp'),
+        avg_otp=Avg('otp'),
+        sum_otp=Sum('otp')
+    )
+    return JsonResponse({"user_statistics": data})
 
 
     # #Insert Data
