@@ -92,9 +92,11 @@ def min_data(request):
     #min
     users = User.objects.aggregate(Min('otp'))
     return JsonResponse({"user": users})
+
+def avg_data(request):
     # avg
-    # users = User.objects.aggregate(Avg('otp'))
-    # return JsonResponse({"user": users})
+    users = User.objects.aggregate(Avg('otp'))
+    return JsonResponse({"user": users})
     #sum
     # users = User.objects.aggregate(Sum('otp'))
     # return JsonResponse({"user": users})

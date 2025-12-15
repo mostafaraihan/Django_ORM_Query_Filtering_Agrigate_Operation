@@ -15,4 +15,5 @@ urlpatterns = [
     path('count_data/', views.count_data),
     path('max_data/', views.max_data),
     path('min_data/', views.min_data),
+    path('avg_data/', views.avg_data),
 ]
