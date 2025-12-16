@@ -27,4 +27,5 @@ urlpatterns = [
     path('less_then/', views.less_then),
     path('gt_equal/', views.gt_equal),
     path('lt_equal/', views.lt_equal),
+    path('q_data/', views.q_data),
 ]

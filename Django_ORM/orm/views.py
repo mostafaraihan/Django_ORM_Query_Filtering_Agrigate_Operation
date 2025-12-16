@@ -191,3 +191,13 @@ def gt_equal(request):
 def lt_equal(request):
     result = Product.objects.filter(price__lt=500).values()
     return JsonResponse({"less_data": list(result)})
+
+
+from  django.db.models import Q
+def q_data(request):
+    result = Product.objects.filter(
+        Q(name="Apple") |
+        Q(price__lt=500) |
+        Q(price__gt=500)
+    ).values()
+    return JsonResponse({"cmb_data": list(result)})
