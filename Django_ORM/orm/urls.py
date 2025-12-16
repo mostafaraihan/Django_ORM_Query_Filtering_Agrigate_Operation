@@ -23,4 +23,6 @@ urlpatterns = [
     path('delete_data/', views.delete_data),
     path('update_data/', views.update_data),
     path('equal_data/', views.equal_data),
+    path('greater_then/', views.greater_then),
+    path('less_then/', views.less_then),
 ]

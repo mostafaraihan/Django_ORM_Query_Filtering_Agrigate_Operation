@@ -176,3 +176,11 @@ def equal_data(request):
     result = Product.objects.filter(price=500).values()
     return JsonResponse({"equal_data": list(result)})
 
+def greater_then(request):
+    result = Product.objects.filter(price__gt=500).values()
+    return JsonResponse({"gt_data": list(result)})
+
+def less_then(request):
+    result = Product.objects.filter(price__lt=500).values()
+    return JsonResponse({"less_data": list(result)})
+
