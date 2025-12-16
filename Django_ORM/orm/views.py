@@ -1,4 +1,4 @@
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
 from .models import *
 
 def fetch_alldata(request):
@@ -207,4 +207,8 @@ def case_sens(request):
 
 def case_notsens(request):
     result = Product.objects.filter(name__icontains='p').values()
+    return JsonResponse({"Data": list(result)})
+
+def start_with(request):
+    result = Product.objects.filter(name__startswith='p').values()
     return JsonResponse({"Data": list(result)})
