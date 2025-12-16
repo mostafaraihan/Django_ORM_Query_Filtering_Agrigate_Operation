@@ -21,5 +21,5 @@ urlpatterns = [
     path('insert_data/', views.insert_data),
     path('insert_multiple_data/', views.insert_multiple_data),
     path('delete_data/', views.delete_data),
-    path('updata_data/', views.updata_data),
+    path('update_data/', views.update_data),
 ]
