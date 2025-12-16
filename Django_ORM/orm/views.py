@@ -212,3 +212,7 @@ def case_notsens(request):
 def start_with(request):
     result = Product.objects.filter(name__startswith='p').values()
     return JsonResponse({"Data": list(result)})
+
+def end_with(request):
+    result = Product.objects.filter(name__endswith='e').values()
+    return JsonResponse({"Data": list(result)})
