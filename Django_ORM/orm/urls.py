@@ -28,4 +28,5 @@ urlpatterns = [
     path('lt_equal/', views.lt_equal),
     path('q_data/', views.q_data),
     path('case_sens', views.case_sens),
+    path('case_notsens', views.case_notsens),
 ]

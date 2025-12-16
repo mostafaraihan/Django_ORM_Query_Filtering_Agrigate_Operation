@@ -204,3 +204,7 @@ def q_data(request):
 def case_sens(request):
     result = Product.objects.filter(name__contains='pp').values()
     return JsonResponse({"Data": list(result)})
+
+def case_notsens(request):
+    result = Product.objects.filter(name__icontains='p').values()
+    return JsonResponse({"Data": list(result)})
