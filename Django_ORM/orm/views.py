@@ -170,3 +170,9 @@ def update_data(request):
 
     return JsonResponse({"msg": "Updated Successfully"})
 
+
+#Comparison Operator
+def equal_data(request):
+    result = Product.objects.filter(price=500).values()
+    return JsonResponse({"equal_data": list(result)})
+

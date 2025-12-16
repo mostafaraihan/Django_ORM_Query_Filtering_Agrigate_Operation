@@ -1,0 +1,13 @@
+INSERT INTO main.orm_product
+(name, price, unit, username_id, category_id, created_at, updated_at)
+VALUES
+('Apple', 1.50, 'kg', 1, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Banana', 0.80, 'kg', 1, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Milk', 2.20, 'liter', 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Bread', 1.30, 'pcs', 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Rice', 45.00, 'kg', 1, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Sugar', 38.50, 'kg', 1, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Eggs', 6.00, 'dozen', 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Orange Juice', 3.75, 'liter', 1, 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Potato', 0.60, 'kg', 1, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('Chicken', 5.90, 'kg', 1, 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
