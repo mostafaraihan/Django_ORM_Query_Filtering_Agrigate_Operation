@@ -31,4 +31,5 @@ urlpatterns = [
     path('case_notsens', views.case_notsens),
     path('start_with', views.start_with),
     path('end_with', views.end_with),
+    path('data_range', views.data_range),
 ]

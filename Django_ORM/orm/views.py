@@ -216,3 +216,7 @@ def start_with(request):
 def end_with(request):
     result = Product.objects.filter(name__endswith='e').values()
     return JsonResponse({"Data": list(result)})
+
+def data_range(request):
+    result = Product.objects.filter(price__range=(200,500)).values()
+    return JsonResponse({"Data": list(result)})
