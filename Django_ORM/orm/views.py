@@ -220,3 +220,7 @@ def end_with(request):
 def data_range(request):
     result = Product.objects.filter(price__range=(200,500)).values()
     return JsonResponse({"Data": list(result)})
+
+def membership_in(request):
+    result = Product.objects.filter(price__in=[100,500]).values()
+    return JsonResponse({"Data": list(result)})
