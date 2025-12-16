@@ -184,3 +184,10 @@ def less_then(request):
     result = Product.objects.filter(price__lt=500).values()
     return JsonResponse({"less_data": list(result)})
 
+def gt_equal(request):
+    result = Product.objects.filter(price__gt=500).values()
+    return JsonResponse({"gt_data": list(result)})
+
+def lt_equal(request):
+    result = Product.objects.filter(price__lt=500).values()
+    return JsonResponse({"less_data": list(result)})
