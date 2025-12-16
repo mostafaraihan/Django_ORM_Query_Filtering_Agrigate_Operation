@@ -1,9 +1,6 @@
 from django.http import JsonResponse, HttpResponse
 from .models import *
 
-def home(request):
-    return HttpResponse("Django ORM Query Filtering Agrigate Operation")
-
 def fetch_alldata(request):
     #Fetch all user data
     users =User.objects.all().values()
@@ -153,10 +150,12 @@ def insert_multiple_data(request):
     User.objects.bulk_create(users)
     return JsonResponse({"msg": "Bulk Created Successfully"})
 
+
 def delete_data(request):
     #Delete Data
     User.objects.get(id=4).delete()
     return JsonResponse({"msg": "Deleted Successfully"})
+
 
 def update_data(request):
     # Update data
@@ -167,7 +166,6 @@ def update_data(request):
         last_name='Islam',
         email='nazmul@gmail.com'
     )
-
     return JsonResponse({"msg": "Updated Successfully"})
 
 
@@ -201,3 +199,8 @@ def q_data(request):
         Q(price__gt=500)
     ).values()
     return JsonResponse({"cmb_data": list(result)})
+
+
+def case_sens(request):
+    result = Product.objects.filter(name__contains='pp').values()
+    return JsonResponse({"Data": list(result)})
