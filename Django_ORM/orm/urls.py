@@ -33,4 +33,5 @@ urlpatterns = [
     path('end_with/', views.end_with),
     path('data_range/', views.data_range),
     path('membership_in/', views.membership_in),
+    path('membership_not_in/', views.membership_not_in),
 ]

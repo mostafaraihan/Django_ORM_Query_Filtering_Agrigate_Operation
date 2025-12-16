@@ -224,3 +224,7 @@ def data_range(request):
 def membership_in(request):
     result = Product.objects.filter(price__in=[100,500]).values()
     return JsonResponse({"Data": list(result)})
+
+def membership_not_in(request):
+    result = Product.objects.exclude(price__in=[100,500]).values()
+    return JsonResponse({"Data": list(result)})
